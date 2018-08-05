@@ -1,0 +1,25 @@
+{
+  "name": "foo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "author": "Maxime Veber <maxime.veber@nekland.fr>",
+  "devDependencies": {
+    "@types/pixi.js": "^4.8.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "script-loader": "^0.7.2",
+    "ts-loader": "^4.4.2",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.4",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.4",
+    "webpack-cli": "^3.1.0",
+    "pixi.js": "^4.8.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.14.0"
+  }
+}
