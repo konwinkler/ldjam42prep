@@ -4,9 +4,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open --mode=development"
   },
-  "author": "Maxime Veber <maxime.veber@nekland.fr>",
   "devDependencies": {
     "@types/pixi.js": "^4.8.0",
     "clean-webpack-plugin": "^0.1.19",
