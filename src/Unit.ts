@@ -11,9 +11,14 @@ export class Unit {
     constructor(app: PIXI.Application, public tile: Tile) {
         this.sprite = new PIXI.Sprite(PIXI.loader.resources['./assets/unit.png'].texture)
 
-        this.position = new PIXI.Point(tile.position.x + offset, tile.position.y + offset)
-        this.sprite.position = this.position
+        this.setTile(this.tile)
 
         app.stage.addChild(this.sprite)
+    }
+
+    setTile(tile: Tile): any {
+        this.tile = tile
+        this.position = new PIXI.Point(tile.position.x + offset, tile.position.y + offset)
+        this.sprite.position = this.position
     }
 }

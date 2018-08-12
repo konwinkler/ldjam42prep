@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js'
 import { Keyboard } from './Keyboard'
 import { World } from './World'
+import { Direction } from './Direction'
 
 const Application = PIXI.Application
 const Container = PIXI.Container
@@ -59,7 +60,9 @@ function setup() {
     // left.release = () => {}
     // up.press = () => {}
     // up.release = () => {}
-    // right.press = () => {}
+    right.press = () => {
+        world.move(0, Direction.RIGHT)
+    }
     // right.release = () => {}
     // down.press = () => {}
     // down.release = () => {}
