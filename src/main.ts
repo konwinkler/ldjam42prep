@@ -9,9 +9,9 @@ const resources = PIXI.loader.resources
 const TextureCache = PIXI.utils.TextureCache
 const Sprite = PIXI.Sprite
 
-export const gridSize = 32
-export const appWidth = gridSize * 25
-export const appHeight = gridSize * 13
+export const gridSize = 42
+export const appWidth = gridSize * 18
+export const appHeight = gridSize * 10
 
 document.addEventListener(
     'DOMContentLoaded',
@@ -38,7 +38,10 @@ document.body.appendChild(app.view)
 
 app.renderer.backgroundColor = 0xc0c0c0
 
-loader.add('./assets/tile.png').load(setup)
+loader
+    .add('./assets/tile.png')
+    .add('./assets/unit.png')
+    .load(setup)
 
 // Define any variables that are used in more than one function
 let state: any
