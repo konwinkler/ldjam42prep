@@ -1,5 +1,6 @@
 import * as PIXI from 'pixi.js'
-import { Keyboard } from './keyboard'
+import { Keyboard } from './Keyboard'
+import { World } from './World'
 
 const Application = PIXI.Application
 const Container = PIXI.Container
@@ -9,8 +10,8 @@ const TextureCache = PIXI.utils.TextureCache
 const Sprite = PIXI.Sprite
 
 export const gridSize = 32
-export const appWidth = 512
-export const appHeight = 512
+export const appWidth = gridSize * 25
+export const appHeight = gridSize * 13
 
 document.addEventListener(
     'DOMContentLoaded',
@@ -37,17 +38,14 @@ document.body.appendChild(app.view)
 
 app.renderer.backgroundColor = 0xc0c0c0
 
-loader
-    .add('./assets/ca.png')
-    .add('./assets/street.png')
-    .add('./assets/house.png')
-    .load(setup)
+loader.add('./assets/tile.png').load(setup)
 
 // Define any variables that are used in more than one function
 let state: any
 
 function setup() {
     const keyboard = new Keyboard()
+    const world = new World(app)
 
     // Capture the keyboard arrow keys
     const left = keyboard.inputHandler(37)
