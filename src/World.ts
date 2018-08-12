@@ -15,7 +15,27 @@ export class World {
         this.units.push(new Unit(app, this.tiles[0]))
     }
 
-    move(unit: number, direction: Direction): any {
-        this.units[0].setTile(this.tiles[1])
+    move(unitIndex: number, direction: Direction): any {
+        const unit = this.units[unitIndex]
+        switch (direction) {
+            case Direction.RIGHT:
+                unit.setTile(this.findTileAtTile(unit.tile.x + 1, unit.tile.y))
+                break
+            case Direction.LEFT:
+                unit.setTile(this.findTileAtTile(unit.tile.x - 1, unit.tile.y))
+                break
+            case Direction.UP:
+                unit.setTile(this.findTileAtTile(unit.tile.x, unit.tile.y - 1))
+                break
+            case Direction.DOWN:
+                unit.setTile(this.findTileAtTile(unit.tile.x, unit.tile.y + 1))
+                break
+        }
+    }
+
+    private findTileAtTile(x: number, y: number): Tile {
+        return this.tiles.find(tile => {
+            return tile.x === x && tile.y === y
+        })
     }
 }

@@ -56,15 +56,21 @@ function setup() {
     const up = keyboard.inputHandler(38)
     const right = keyboard.inputHandler(39)
     const down = keyboard.inputHandler(40)
-    // left.press = () => {}
+    left.press = () => {
+        world.move(0, Direction.LEFT)
+    }
     // left.release = () => {}
-    // up.press = () => {}
+    up.press = () => {
+        world.move(0, Direction.UP)
+    }
     // up.release = () => {}
     right.press = () => {
         world.move(0, Direction.RIGHT)
     }
     // right.release = () => {}
-    // down.press = () => {}
+    down.press = () => {
+        world.move(0, Direction.DOWN)
+    }
     // down.release = () => {}
 
     state = play

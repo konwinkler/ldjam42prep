@@ -17,6 +17,10 @@ export class Unit {
     }
 
     setTile(tile: Tile): any {
+        if (tile === undefined) {
+            return
+        }
+
         this.tile = tile
         this.position = new PIXI.Point(tile.position.x + offset, tile.position.y + offset)
         this.sprite.position = this.position
